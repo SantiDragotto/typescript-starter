@@ -12,6 +12,8 @@ export class AuthService {
 
     const { email, accessToken, refreshToken } = req.user;
 
+    console.log(req.user)
+
     // Guardar en la base de datos
     await this.prisma.userToken.upsert({
       where: { userId: email },
